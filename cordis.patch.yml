@@ -1,0 +1,27 @@
+# dsh-compact bundle: one host plugin that gates automatic context compaction.
+#
+# The row name must be the bare package name, exactly as in package.json. Every
+# key under `config` is a Config field of the plugin; the loader replaces a row's
+# whole config instead of merging it, so restate anything you keep when
+# overriding this row from a profile patch.
+#
+# The defaults below are the intended shipping behaviour:
+#   - trigger at 90% of the routed model's declared window (no fixed subtraction)
+#   - no extra output floor, so the ratio is the only rule
+#   - live, not a dry run
+- insert:
+    - id: dsh-compact
+      name: dsh-compact
+      config:
+        enabled: true
+        # Every route. Narrow it (e.g. deepseek-official/deepseek-flash) when only
+        # some models should be gated.
+        routes: '*'
+        # Window fraction that triggers automatic compaction. 0.9 = 90%.
+        triggerRatio: 0.9
+        # Optional output guard. 0 disables it, making triggerRatio the only rule.
+        # Raise it to the largest single response you must not truncate; the gate
+        # then also opens early when that much room is no longer left.
+        minOutputReserve: 0
+        # false = really suppress early checks. Set true to only log verdicts.
+        dryRun: false

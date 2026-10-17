@@ -1,0 +1,52 @@
+{
+  "name": "dsh-compact",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "description": "Ratio-exact compaction trigger for DeepSeek Harness: gate automatic context compaction at a fraction of the routed model's window, with no fixed headroom deduction.",
+  "license": "MIT",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./lib/index.js",
+    "./policy": "./lib/policy.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "README.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.2 <0.3.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "test": "node --test test/policy.test.js test/index.test.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "verifiedWith": "0.2.0-rc.2"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "context"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baldovinmarques391-design/dsh-compact.git"
+  }
+}

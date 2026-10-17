@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Ratio-exact compaction",
+    "description": "Trigger automatic context compaction at a fraction of the routed model's window: exact ratio, no fixed headroom deduction."
+  }
+}

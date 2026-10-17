@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="Compact by ratio">
+  <!-- No backing plate. Content capped at 23.0 wide. -->
+  <path d="M12 1.5v8.1M8.9 6.5 12 9.6l3.1-3.1" fill="none" stroke="#54626f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 22.5v-8.1M8.9 17.5 12 14.4l3.1 3.1" fill="none" stroke="#54626f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1.2 12h21.6" stroke="#e5484d" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
